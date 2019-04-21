@@ -5,7 +5,7 @@
  * Distributed under terms of the MIT license.
  */
 
-#include "stdio.h"
+#include<stdio.h>
 
 int main()
 {
