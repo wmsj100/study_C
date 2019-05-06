@@ -2,9 +2,11 @@
 # Makefile
 # pi, 2019-05-06 23:37
 #
+all:myapp
 CC=gcc
 INCLUDE= .
 CFLAGS= -g -Wall -ansi
+INSTDIR=/usr/local/bin
 myapp: main.o 2.o 3.o
 	$(CC) -o myapp main.o 2.o 3.o
 
@@ -16,3 +18,17 @@ main.o: main.c a.h
 
 3.o: 3.c b.h c.h
 	$(CC) -I$(INCLUDE) $(CFLAGS) -c 3.c
+
+clean:
+	-rm -f *.o myapp
+
+install:myapp
+	@if [ -d $(INSTDIR) ];\
+		then \
+		cp myapp $(INSTDIR); \
+		chmod a+x $(INSTDIR)/myapp; \
+		chmod og-w $(INSTDIR)/myapp; \
+		echo "Installed in %(INSTDIR)"; \
+	else \
+		echo "Sorry, $(INSTDIR) does not exist"; \
+	fi
