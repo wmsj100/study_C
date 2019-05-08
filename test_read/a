@@ -1,0 +1,6 @@
+8pi@raspberrypi:~/Github/study_C/test_read $ ./a.out
+hello qwer 123
+15pi@raspberrypi:~/Github/study_C/test_read $ vim t1.c
+pi@raspberrypi:~/Github/study_C/test_read $ gcc t1.c
+pi@raspberrypi:~/Github/study_C/test_read $ ./a.out
+
